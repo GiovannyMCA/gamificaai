@@ -138,7 +138,7 @@ h2 {
     padding-bottom: 20px;
     margin-bottom: 40px;
 
-    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
 
 
     background-color: var(--roxo-gamifica);
@@ -205,17 +205,20 @@ h2 {
     display: flex;
     justify-content: space-between;
 }
+
 /* id = # */
 /* Class = . */
 
 #portifolio {
-height: 250px;
+    height: 250px;
 
-background-image: url(img/Bonecos.png);
-background-size: 250px;
-background-attachment: fixed;
+    background-image: url(img/Bonecos.png);
+    background-size: 250px;
+    background-attachment: fixed;
 
-position: relative;
+    margin-bottom: 120px;
+
+    position: relative;
 
 }
 
@@ -233,17 +236,114 @@ position: relative;
 
 #portifolio .container-grid {
 
-    height:  100%;
-    
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #portifolio a {
+    width: fit-content;
     color: white;
     font-family: "anta";
     font-size: 28px;
 
     z-index: 1;
+
+    transition: 200ms;
+}
+
+#portifolio a:hover {
+    transform: scale(1.05);
+    transition: 200ms;
+}
+
+#contato {
+    text-align: center;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+
+#contato h2 {
+    margin-bottom: 70px;
+}
+
+#contato form {
+    background-color: var(--roxo-gamifica);
+    width: 50%;
+    padding: 60px 0;
+
+    border-radius: 80px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: white;
+    font-family: "Montserrat";
+    font-size: 17px;
+
+}
+
+
+
+.campo {
+    width: 60%;
+
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-bottom: 50px;
+}
+
+.campo-descricao {
+    width: 60%;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.campo input {  
+    height: 40px;
+
+
+    color: white;
+    background-color: #351868;
+
+    border: none;
+    border-radius: 4px;
+
+    outline: none;
+
+    text-indent: 10px;
+}
+
+.campo-descricao textarea {
+
+    color: white;
+    background-color: #351868;
+
+    border: none;
+    border-radius: 4px;
+
+    outline: none;
+
+    padding: 10px;
+
+    resize: none;
+}
+
+.campo label, .campo-descricao label {
+    margin-bottom: 15px;
 }
