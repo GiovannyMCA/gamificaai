@@ -9,11 +9,11 @@
 }
 
 /* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
 html {
     scroll-behavior: smooth;
@@ -80,7 +80,6 @@ header .container-grid {
 
     color: white;
 
-    text-decoration: underline transparent;
     text-decoration-thickness: 2px;
 
     transition: text-decoration 500ms ease;
@@ -488,6 +487,13 @@ footer .container-grid {
 }
 
 /* Responsividade */
+
+
+.menu-fechado {
+    display: none;
+}
+
+
 @media screen and (max-width: 1300px) {
 
     header {
