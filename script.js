@@ -89,3 +89,28 @@ function selecionarSlide(indiceSlide) {
 
     banner.classList.add(slides[slideAtual])
 }
+
+let listaCases = [
+  
+
+    
+]
+
+function renderizarCases() {
+    //encontrar o eleme0nto e inserir os cards
+    let containerCards = document.querySelector(".container-cards")
+   
+    //para cada case da listaCases
+    let template = ""
+
+    listaCases.forEach(cardCase => {
+        //montar html do card, passando os atributos do case
+        template += `<div class="card">
+        <img src=${ cardCase.imagem } alt="">
+        <p>${ cardCase.descricao }/p>
+        <button>Ver mais</button>
+    </div>`
+    })
+    //inserir html dos cases montados no elemento container cards
+    containerCards.innerHTML = template
+}
