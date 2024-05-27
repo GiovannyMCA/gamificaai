@@ -107,10 +107,61 @@ function renderizarCases() {
         //montar html do card, passando os atributos do case
         template += `<div class="card">
         <img src=${ cardCase.imagem } alt="">
-        <p>${ cardCase.descricao }/p>
+        <p>${ cardCase.descricao }
         <button>Ver mais</button>
     </div>`
     })
     //inserir html dos cases montados no elemento container cards
     containerCards.innerHTML = template
+}
+
+function carregarCases() {
+
+    fetch("http://localhost:3000/cases")
+    .then ( (resposta) => resposta.json())
+    .then ( (dadosTratados) => {
+        console.log(dadosTratados)
+        listaCases = dadosTratados
+        renderizarCases() 
+    })
+}
+
+function solicitarOrcamento(event) {
+    //pegar os valores dos inputs
+    let valorNome = document.getElementById("campo-nome").value
+    let valorEmail = document.getElementById ("campo-email").value
+    let valorDescricao = document.getElementById ("campo-texto").value
+
+    // organizar os valores em objetos
+
+    let dadosForm = {
+    nome: valorNome,
+    email: valorEmail,
+    descricao: valorDescricao
+}
+console.log (dadosForm);    
+    //enviar requisicao para API
+    fetch("http://localhost:3000/solicitacoes", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dadosForm)
+    })
+      // Caso sucesso
+      .then(resposta => {
+          console.log(resposta);
+          //limpar os inputs e mostrar um alert de sucesso
+          document.querySelector("#contato form").reset()
+          alert("Solicitação enviada com sucesso!! 👌👍")
+
+      }) 
+    // Caso Erro
+    .catch(erro => {
+        console.log (erro)
+        alert ("Erro na requicição 😭😭😭")
+    })
+        //alerta com msg de erro
+
+        event.preventDefault()
 }
